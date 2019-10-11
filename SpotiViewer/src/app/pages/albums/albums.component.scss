@@ -1,0 +1,22 @@
+@import "../../../variables";
+
+.albums-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.albums-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-toggle-grid-format-container {
+  text-align: right;
+
+  .btn-toggle-grid-format {
+    color: $color-secondary;
+    font-size: 32px;
+    cursor: pointer;
+    margin: 8px 16px;
+  }
+}

@@ -1,0 +1,60 @@
+@import "../../../variables";
+
+.list-item {
+  display: flex;
+  background-color: $color-primary-dark;
+  border-radius: 6px;
+  margin: 0 15px 15px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.08);
+  padding-right: 8px;
+
+  &__image {
+    > img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+
+  &__name {
+    color: $color-text;
+  }
+
+  .list-item__details {
+    color: $color-text;
+    margin-top: 8px;
+    margin-left: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: scroll;
+
+    &__title {
+      overflow-x: scroll;
+
+      > div {
+        white-space: nowrap;
+      }
+    }
+
+    &__artists {
+
+      &__label {
+        font-weight: bold;
+        color: $color-secondary;
+      }
+
+      &__value {
+        overflow-x: scroll;
+
+        > div {
+          white-space: nowrap;
+        }
+      }
+
+    }
+
+  }
+
+}

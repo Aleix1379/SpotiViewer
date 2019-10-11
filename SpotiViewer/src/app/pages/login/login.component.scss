@@ -1,0 +1,26 @@
+@import "../../../variables";
+
+app-login {
+  background-color: black;
+}
+
+.btn-auth {
+  background-color: $color-green;
+  color: $color-text;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.login-title {
+  text-align: center;
+  color: $color-text;
+
+  &__name {
+    color: $color-secondary;
+  }
+}
+
+.login-description {
+  color: $color-text;
+}

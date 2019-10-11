@@ -1,0 +1,20 @@
+@import "../../../variables";
+
+.header {
+  display: flex;
+  padding: 16px;
+  align-items: center;
+  border-bottom: 1px solid $color-primary-dark;
+
+  &__back {
+    color: $color-secondary;
+    font-size: 32px;
+    margin-right: 16px;
+    cursor: pointer;
+  }
+
+  &__title {
+    color: $color-text;
+  }
+
+}
