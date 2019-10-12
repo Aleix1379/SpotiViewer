@@ -1,12 +1,12 @@
 @import "../../../variables";
 
-.page-detail {
+.detail {
 
   &__image {
     width: 100%;
   }
 
-  .page-extra-details {
+  .extra-details {
     margin-top: 25px;
 
     &__row {
@@ -14,6 +14,7 @@
       color: $color-text;
       padding-left: 16px;
       padding-right: 16px;
+      margin-bottom: 8px;
 
       &:not(:last-child) {
         margin-bottom: 15px;
@@ -22,6 +23,7 @@
 
     &__label {
       font-weight: bold;
+      margin-right: 16px;
     }
 
     &__value {

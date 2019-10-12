@@ -1,42 +1,4 @@
 <div *ngIf="album">
-
   <app-header [title]="album.name"></app-header>
-
-  <div class="album-detail">
-
-    <img [src]="album.image" alt="album image" class="album-detail__image"/>
-
-    <div class="album-extra-details">
-
-      <div class="album-extra-details__row">
-        <div class="album-extra-details__label">
-          Release date
-        </div>
-        <div class="album-extra-details__value">
-          {{album.release_date}}
-        </div>
-      </div>
-
-      <div class="album-extra-details__row">
-        <div class="album-extra-details__label">
-          Type
-        </div>
-        <div class="album-extra-details__value">
-          {{album.type}}
-        </div>
-      </div>
-
-      <div class="album-extra-details__row">
-        <div class="album-extra-details__label">
-          Genres
-        </div>
-        <div class="album-extra-details__value">
-          {{album.genres | formatDetails}}
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
+  <app-page-detail [data]="album"></app-page-detail>
 </div>

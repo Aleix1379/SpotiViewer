@@ -1,33 +1,17 @@
-<div class="album-detail">
+<div class="detail">
 
-  <img [src]="data.image" alt="album image" class="album-detail__image"/>
+  <img [src]="detail.image" alt="album image" class="detail__image"/>
 
-  <div class="album-extra-details">
+  <div class="extra-details">
 
-    <div class="album-extra-details__row">
-      <div class="album-extra-details__label">
-        Release date
-      </div>
-      <div class="album-extra-details__value">
-        {{album.release_date}}
-      </div>
-    </div>
-
-    <div class="album-extra-details__row">
-      <div class="album-extra-details__label">
-        Type
-      </div>
-      <div class="album-extra-details__value">
-        {{album.type}}
-      </div>
-    </div>
-
-    <div class="album-extra-details__row">
-      <div class="album-extra-details__label">
-        Genres
-      </div>
-      <div class="album-extra-details__value">
-        {{album.genres | formatDetails}}
+    <div *ngFor="let detail of detail.details">
+      <div class="extra-details__row">
+        <div class="extra-details__label">
+          {{detail.label}}
+        </div>
+        <div class="extra-details__value">
+          {{detail.value | formatDetails}}
+        </div>
       </div>
     </div>
 
