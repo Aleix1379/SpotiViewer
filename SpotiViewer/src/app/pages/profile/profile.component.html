@@ -1,1 +1,27 @@
-<p>profile works!</p>
+<div class="profile" *ngIf="user">
+
+  <div class="profile__image">
+    <img [src]="user.images[0]?.url" alt="user photo"/>
+  </div>
+
+  <div class="profile__name">{{user.display_name}}</div>
+
+  <div class="profile__country">
+    <img [src]="'https://www.countryflags.io/' + user.country + '/flat/64.png'" alt="country flat">
+    <span>{{user.country}}</span>
+  </div>
+
+  <div class="profile__followers">
+    <i class="fas fa-users"></i>
+    <span>{{user.followers.total}} Followers</span>
+  </div>
+
+  <div class="profile__product">
+    Spotify {{user.product}}
+  </div>
+
+</div>
+
+<div class="logout" *ngIf="user">
+  <button class="btn-logout" mat-raised-button color="warn" (click)="logout()">logout</button>
+</div>

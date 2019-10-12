@@ -3,7 +3,6 @@ import {DOCUMENT} from '@angular/common';
 import {AuthService} from '../../services/auth/auth.service';
 import {Router} from '@angular/router';
 import {LocalStorageService} from '../../services/localStorage/local-storage.service';
-import {UsersService} from '../../services/users/users.service';
 
 @Component({
   selector: 'app-login',
@@ -15,8 +14,7 @@ export class LoginComponent implements OnInit {
   constructor(@Inject(DOCUMENT) private document: Document,
               private authService: AuthService,
               private router: Router,
-              private localStorageService: LocalStorageService,
-              private usersService: UsersService) {
+              private localStorageService: LocalStorageService) {
   }
 
   ngOnInit() {
@@ -49,31 +47,6 @@ export class LoginComponent implements OnInit {
       this.localStorageService.setAccessToken(accessToken);
 
       this.router.navigateByUrl('/albums').catch(console.error);
-
-      // this.usersService.getUserData().subscribe(
-      //   user => {
-      //     console.log('ME:');
-      //     console.log(user);
-      //     this.usersService.getPlaylists(user.id).subscribe(
-      //       playlists => {
-      //         console.log('playlists:');
-      //         console.log(playlists);
-      //         const playlistId = playlists.items[0].id;
-      //
-      //         this.usersService.getPlaylist(user.id, playlistId).subscribe(
-      //           playlist => {
-      //             console.log('playlist:::');
-      //             console.log(playlist);
-      //           }
-      //         );
-      //
-      //       }
-      //     );
-      //   },
-      //   error => console.error(error)
-      // );
-
-
     }
   }
 

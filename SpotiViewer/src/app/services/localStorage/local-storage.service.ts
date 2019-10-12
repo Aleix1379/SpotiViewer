@@ -84,7 +84,7 @@ export class LocalStorageService {
     LocalStorageService.removeItem('is-grid-artists-format');
   }
 
-  public clear() {
+  public clearAll() {
     LocalStorageService.clearAll();
   }
 
