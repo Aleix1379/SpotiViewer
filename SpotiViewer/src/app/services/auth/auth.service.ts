@@ -1,4 +1,5 @@
-import {Injectable} from '@angular/core';
+import {Inject, Injectable} from '@angular/core';
+import {DOCUMENT} from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -6,8 +7,10 @@ import {Injectable} from '@angular/core';
 export class AuthService {
 
   private authUrl = 'https://accounts.spotify.com/authorize';
+  private currentUrl: string;
 
-  constructor() {
+  constructor(@Inject(DOCUMENT) private document: Document) {
+    this.currentUrl = this.document.location.href;
   }
 
   /*
@@ -36,10 +39,18 @@ export class AuthService {
   app-remote-control
   */
 
+  private getRedirectUrl (): string {
+    if (this.currentUrl.startsWith('http://localhost:4200')) {
+      return 'http://localhost:4200';
+    } else {
+      return 'http://aleixmp.com';
+    }
+  }
+
   public getAuthorizeUrl(): string {
     return `${this.authUrl}` +
       `?client_id=c24d5ce45e8944e9801a4daef73a62d7` +
-      `&redirect_uri=http://localhost:4200` +
+      `&redirect_uri=${this.getRedirectUrl()}` +
       `&scope=user-read-private%20user-read-email%20user-library-read%20user-follow-read` +
       `&response_type=token` +
       `&state=123`;
