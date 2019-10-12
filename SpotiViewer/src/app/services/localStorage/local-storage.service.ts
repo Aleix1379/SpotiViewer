@@ -60,16 +60,28 @@ export class LocalStorageService {
     LocalStorageService.removeItem('access-token');
   }
 
-  public getIsGridFormat(): boolean {
-    return LocalStorageService.getItem('is-grid-format');
+  public getIsAlbumsGridFormat(): boolean {
+    return LocalStorageService.getItem('is-grid-albums-format');
   }
 
-  public setIsGridFormat(isGridFormat: boolean): void {
-    LocalStorageService.setItem('is-grid-format', isGridFormat);
+  public setIsAlbumsGridFormat(isGridFormat: boolean): void {
+    LocalStorageService.setItem('is-grid-albums-format', isGridFormat);
   }
 
-  public removeGetIsGridFormat() {
-    LocalStorageService.removeItem('is-grid-format');
+  public removeGetIsAlbumsGridFormat() {
+    LocalStorageService.removeItem('is-grid-albums-format');
+  }
+
+  public getIsArtistsGridFormat(): boolean {
+    return LocalStorageService.getItem('is-grid-artists-format');
+  }
+
+  public setIsArtistsGridFormat(isGridFormat: boolean): void {
+    LocalStorageService.setItem('is-grid-artists-format', isGridFormat);
+  }
+
+  public removeGetIsArtistsGridFormat() {
+    LocalStorageService.removeItem('is-grid-artists-format');
   }
 
   public clear() {

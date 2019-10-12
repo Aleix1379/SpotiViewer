@@ -40,7 +40,7 @@ export class AuthService {
     return `${this.authUrl}` +
       `?client_id=c24d5ce45e8944e9801a4daef73a62d7` +
       `&redirect_uri=http://localhost:4200` +
-      `&scope=user-read-private%20user-read-email%20user-library-read` +
+      `&scope=user-read-private%20user-read-email%20user-library-read%20user-follow-read` +
       `&response_type=token` +
       `&state=123`;
   }

@@ -6,13 +6,19 @@
 <div class="albums-grid" *ngIf="isGridFormat">
 
   <div *ngFor="let album of albums">
-    <app-grid-item (click)="goToDetail(album.id)" [album]="album"></app-grid-item>
+    <app-grid-item
+      (click)="goToDetail(album.id)"
+      [data]="album"
+      [type]="'album'"></app-grid-item>
   </div>
 
 </div>
 
 <div class="albums-list" *ngIf="!isGridFormat">
   <div *ngFor="let album of albums">
-    <app-list-item (click)="goToDetail(album.id)" [album]="album"></app-list-item>
+    <app-list-item
+      (click)="goToDetail(album.id)"
+      [data]="album"
+      [type]="'album'"></app-list-item>
   </div>
 </div>

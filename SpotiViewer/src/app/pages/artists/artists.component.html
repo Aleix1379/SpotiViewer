@@ -1,1 +1,26 @@
-<p>artists works!</p>
+<app-list-header [title]="'My favorite artists'"
+                 [isGridFormat]="isGridFormat"
+                 (onToggleGridFormat)="toggleGridFormat()">
+</app-list-header>
+
+<div class="artists-grid" *ngIf="isGridFormat">
+
+  <div *ngFor="let artist of artists">
+    <app-grid-item
+      (click)="goToArtistDetail(artist.id)"
+      [data]="artist"
+      [type]="'artist'">
+    </app-grid-item>
+  </div>
+
+</div>
+
+<div class="artists-list" *ngIf="!isGridFormat">
+  <div *ngFor="let artist of artists">
+    <app-list-item
+      (click)="goToArtistDetail(artist.id)"
+      [data]="artist"
+      [type]="'artist'">
+    </app-list-item>
+  </div>
+</div>

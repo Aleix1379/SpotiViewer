@@ -1,19 +1,19 @@
 <div class="list-item">
 
   <div class="list-item__image">
-    <img [src]="album.image" alt="Album image"/>
+    <img [src]="data.image" alt="Album image"/>
   </div>
 
   <div class="list-item__details">
     <div class="list-item__details__title">
-      <div>{{album.name}}</div>
+      <div>{{data.name}}</div>
     </div>
 
     <div class="list-item__details__artists">
 
-      <div class="list-item__details__artists__label">Artists</div>
+      <div class="list-item__details__artists__label">{{detailsLabel}}</div>
       <div class="list-item__details__artists__value">
-        <div>{{album.artists}}</div>
+        <div>{{data.details}}</div>
       </div>
 
     </div>
