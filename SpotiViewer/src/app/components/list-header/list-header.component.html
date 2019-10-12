@@ -1,0 +1,5 @@
+<div class="btn-toggle-grid-format-container">
+  <div>{{title}}</div>
+  <i class="fas fa-list btn-toggle-grid-format" *ngIf="isGridFormat" (click)="toggleGridFormat()"></i>
+  <i class="fas fa-th btn-toggle-grid-format" *ngIf="!isGridFormat" (click)="toggleGridFormat()"></i>
+</div>
