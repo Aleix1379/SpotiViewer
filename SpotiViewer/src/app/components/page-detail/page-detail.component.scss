@@ -1,12 +1,12 @@
 @import "../../../variables";
 
-.artist-detail {
+.page-detail {
 
   &__image {
     width: 100%;
   }
 
-  .artist-extra-details {
+  .page-extra-details {
     margin-top: 25px;
 
     &__row {
@@ -22,7 +22,6 @@
 
     &__label {
       font-weight: bold;
-      margin-right: 16px;
     }
 
     &__value {

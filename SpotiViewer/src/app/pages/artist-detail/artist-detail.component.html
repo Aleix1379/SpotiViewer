@@ -1,1 +1,33 @@
-<p>artist-detail works!</p>
+<div *ngIf="artist">
+
+  <app-header [title]="artist.name"></app-header>
+
+  <div class="artist-detail">
+
+    <img [src]="artist.image" alt="artist image" class="artist-detail__image" />
+
+    <div class="artist-extra-details">
+
+      <div class="artist-extra-details__row">
+        <div class="artist-extra-details__label">
+          Type
+        </div>
+        <div class="artist-extra-details__value">
+          {{artist.type}}
+        </div>
+      </div>
+
+      <div class="artist-extra-details__row">
+        <div class="artist-extra-details__label">
+          Genres
+        </div>
+        <div class="artist-extra-details__value">
+          {{artist.genres | formatDetails}}
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

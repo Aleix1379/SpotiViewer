@@ -66,7 +66,7 @@ export class ArtistsComponent implements OnInit {
   }
 
   goToArtistDetail(artistId: string) {
-    console.log('go to artist detail: ' + artistId);
+    this.router.navigateByUrl(`/artists/${artistId}`).catch(console.error);
   }
 
 }

@@ -1,9 +1,9 @@
 import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
-  name: 'genresFormat'
+  name: 'formatDetails'
 })
-export class GenresFormatPipe implements PipeTransform {
+export class FormatDetailsPipe implements PipeTransform {
 
   transform(genres: string[]): any {
     if (genres && genres.length > 0) {

@@ -5,6 +5,7 @@ import {ProfileComponent} from './pages/profile/profile.component';
 import {AlbumsComponent} from './pages/albums/albums.component';
 import {LoginComponent} from './pages/login/login.component';
 import {AlbumDetailComponent} from './pages/album-detail/album-detail.component';
+import {ArtistDetailComponent} from './pages/artist-detail/artist-detail.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'artists',
     component: ArtistsComponent
+  },
+  {
+    path: 'artists/:id',
+    component: ArtistDetailComponent
   },
   {
     path: 'profile',

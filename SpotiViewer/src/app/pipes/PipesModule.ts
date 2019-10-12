@@ -1,14 +1,14 @@
 import {NgModule} from '@angular/core';
-import {GenresFormatPipe} from './genres-format.pipe';
+import {FormatDetailsPipe} from './genres-format.pipe';
 
 
 @NgModule({
   declarations: [
-    GenresFormatPipe,
+    FormatDetailsPipe,
   ],
   imports: [],
   exports: [
-    GenresFormatPipe,
+    FormatDetailsPipe,
   ]
 })
 export class PipesModule {

@@ -21,6 +21,7 @@ import {PipesModule} from './pipes/PipesModule';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import { ListHeaderComponent } from './components/list-header/list-header.component';
 import { ArtistDetailComponent } from './pages/artist-detail/artist-detail.component';
+import { PageDetailComponent } from './components/page-detail/page-detail.component';
 
 @NgModule({
   entryComponents: [
@@ -42,6 +43,7 @@ import { ArtistDetailComponent } from './pages/artist-detail/artist-detail.compo
     ListItemComponent,
     ListHeaderComponent,
     ArtistDetailComponent,
+    PageDetailComponent,
   ],
   imports: [
     AppRoutingModule,
