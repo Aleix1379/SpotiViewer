@@ -1,4 +1,5 @@
 @import "../../../variables";
+@import "../../../mixins";
 
 .profile {
   color: $color-text;
@@ -16,6 +17,7 @@
       height: 128px;
       border-radius: 50%;
       display: block;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     }
   }
 
@@ -46,5 +48,9 @@
 
 .logout {
   margin: 32px 16px 0;
+
+  @include respond(desktop) {
+    text-align: center;
+  }
 }
 

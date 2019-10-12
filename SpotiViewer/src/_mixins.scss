@@ -1,0 +1,9 @@
+// MEDIA QUERY MANAGER
+// 1em = 16px
+@mixin respond($breakpoint) {
+  @if $breakpoint == desktop {
+    @media (min-width: 64.0625em) { // 1025px (1025px / 16 = 64.0625)
+      @content;
+    }
+  }
+}

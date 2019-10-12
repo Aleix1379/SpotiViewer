@@ -1,4 +1,5 @@
 @import "../../../variables";
+@import "../../../mixins";
 
 .button {
   color: $color-text;
@@ -6,4 +7,9 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   cursor: pointer;
+
+  @include respond(desktop) {
+    max-width: 200px;
+  }
+
 }

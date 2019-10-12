@@ -1,9 +1,22 @@
 @import "../../../variables";
+@import "../../../mixins";
 
 .detail {
 
+  @include respond(desktop) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 16px;
+  }
+
   &__image {
     width: 100%;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.08);
+
+    @include respond(desktop) {
+      width: 300px;
+    }
   }
 
   .extra-details {
@@ -28,6 +41,7 @@
 
     &__value {
       margin-left: auto;
+      text-align: right;
 
       &:first-letter {
         text-transform: uppercase;

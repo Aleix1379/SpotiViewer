@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./variables";
+@import "./mixins";
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 
 html, body {
@@ -15,21 +16,41 @@ body {
 .page {
   padding: 16px;
   background-color: $color-primary-light;
+
+  @include respond(desktop) {
+    text-align: center;
+  }
+
 }
 
 app-root {
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
+  height: 100vh;
 }
 
 app-albums,
 app-artists {
   max-height: calc(100vh - 60px);
   overflow-y: scroll;
+
+  @include respond(desktop) {
+    position: relative;
+    top: 55px;
+  }
+}
+
+app-albums,
+app-artists,
+app-profile {
+  @include respond(desktop) {
+    position: relative;
+    top: 55px;
+  }
 }
 
 .mat-dialog-container {
   background-color: $color-primary-dark;
-  overflow: hidden!important;
+  overflow: hidden !important;
 }
