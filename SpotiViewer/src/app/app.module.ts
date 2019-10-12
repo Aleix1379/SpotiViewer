@@ -20,6 +20,7 @@ import { HeaderComponent } from './components/header/header.component';
 import {PipesModule} from './pipes/PipesModule';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import { ListHeaderComponent } from './components/list-header/list-header.component';
+import { ArtistDetailComponent } from './pages/artist-detail/artist-detail.component';
 
 @NgModule({
   entryComponents: [
@@ -40,6 +41,7 @@ import { ListHeaderComponent } from './components/list-header/list-header.compon
     HeaderComponent,
     ListItemComponent,
     ListHeaderComponent,
+    ArtistDetailComponent,
   ],
   imports: [
     AppRoutingModule,
