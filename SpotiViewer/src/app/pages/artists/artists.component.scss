@@ -3,9 +3,13 @@
 .artists-grid {
   display: grid;
   grid-template-columns: 50% 50%;
+  height: calc(100vh - 100px);
+  overflow-y: scroll;
 }
 
 .artists-list {
   display: flex;
   flex-direction: column;
+  height: calc(100vh - 100px);
+  overflow-y: scroll;
 }
