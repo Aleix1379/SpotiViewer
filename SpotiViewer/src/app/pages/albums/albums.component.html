@@ -1,7 +1,7 @@
-<div class="btn-toggle-grid-format-container">
-  <i class="fas fa-list btn-toggle-grid-format" *ngIf="isGridFormat" (click)="toggleGridFormat()"></i>
-  <i class="fas fa-th btn-toggle-grid-format" *ngIf="!isGridFormat" (click)="toggleGridFormat()"></i>
-</div>
+<app-list-header [title]="'My favorite albums'"
+                 [isGridFormat]="isGridFormat"
+                 (onToggleGridFormat)="toggleGridFormat()">
+</app-list-header>
 
 <div class="albums-grid" *ngIf="isGridFormat">
 
