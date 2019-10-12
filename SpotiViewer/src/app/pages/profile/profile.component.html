@@ -23,5 +23,8 @@
 </div>
 
 <div class="logout" *ngIf="user">
-  <button class="btn-logout" mat-raised-button color="warn" (click)="logout()">logout</button>
+  <app-button [label]="'logout'"
+              [color]="'red'"
+              (btnPressed)="logout()">
+  </app-button>
 </div>

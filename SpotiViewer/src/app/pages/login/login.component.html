@@ -8,6 +8,9 @@
     SpotiViewer needs to access to your profile.
   </p>
 
-  <button class="btn-auth" mat-raised-button (click)="authorize()">authorize</button>
+  <app-button [label]="'authorize'"
+              [color]="'green'"
+              (btnPressed)="authorize()">
+  </app-button>
 
 </div>

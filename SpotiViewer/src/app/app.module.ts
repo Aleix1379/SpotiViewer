@@ -22,6 +22,7 @@ import { ListItemComponent } from './components/list-item/list-item.component';
 import { ListHeaderComponent } from './components/list-header/list-header.component';
 import { ArtistDetailComponent } from './pages/artist-detail/artist-detail.component';
 import { PageDetailComponent } from './components/page-detail/page-detail.component';
+import { ButtonComponent } from './components/button/button.component';
 
 @NgModule({
   entryComponents: [
@@ -44,6 +45,7 @@ import { PageDetailComponent } from './components/page-detail/page-detail.compon
     ListHeaderComponent,
     ArtistDetailComponent,
     PageDetailComponent,
+    ButtonComponent,
   ],
   imports: [
     AppRoutingModule,
