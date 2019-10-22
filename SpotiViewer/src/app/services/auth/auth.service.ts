@@ -43,7 +43,7 @@ export class AuthService {
     if (this.currentUrl.startsWith('http://localhost:4200')) {
       return 'http://localhost:4200';
     } else {
-      return 'http://aleixmp.com';
+      return 'https://www.spoti-viewer.aleixmp.com/';
     }
   }
 
