@@ -9,6 +9,10 @@ export class AuthService {
   private authUrl = 'https://accounts.spotify.com/authorize';
   private currentUrl: string;
 
+  private static formatScopes(scopes: string[]): string {
+    return encodeURIComponent(scopes.join(' '));
+  }
+
   constructor(@Inject(DOCUMENT) private document: Document) {
     this.currentUrl = this.document.location.href;
   }
@@ -39,7 +43,7 @@ export class AuthService {
   app-remote-control
   */
 
-  private getRedirectUrl (): string {
+  private getRedirectUrl(): string {
     if (this.currentUrl.startsWith('http://localhost:4200')) {
       return 'http://localhost:4200';
     } else {
@@ -51,7 +55,16 @@ export class AuthService {
     return `${this.authUrl}` +
       `?client_id=c24d5ce45e8944e9801a4daef73a62d7` +
       `&redirect_uri=${this.getRedirectUrl()}` +
-      `&scope=user-read-private%20user-read-email%20user-library-read%20user-follow-read` +
+      `&scope=${AuthService.formatScopes(
+        [
+          'user-read-private',
+          'streaming',
+          'user-follow-read',
+          'user-library-read',
+          'user-read-email',
+          'user-read-private',
+        ]
+      )}` +
       `&response_type=token` +
       `&state=123`;
   }

@@ -2,6 +2,7 @@ import {Component, Inject} from '@angular/core';
 import {Router} from '@angular/router';
 import {DOCUMENT} from '@angular/common';
 import {AuthService} from './services/auth/auth.service';
+import {PlayerService} from './services/player/player.service';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,10 @@ export class AppComponent {
 
   constructor(@Inject(DOCUMENT) private document: Document,
               private authService: AuthService,
-              private router: Router) {
+              private router: Router,
+              private playerService: PlayerService) {
+
+    this.playerService.loadSpotify();
 
     router.events.subscribe(() => {
       this.currentPath = router.url;

@@ -1,0 +1,82 @@
+@import "../../../variables";
+@import "../../../mixins";
+
+.tab-album-extra-details {
+  margin-bottom: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  .mat-tab-group {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 12px;
+
+    @include respond(desktop) {
+      width: 80%;
+    }
+  }
+}
+
+.track {
+  display: flex;
+  color: $color-text;
+  border-bottom: 1px solid $color-primary-dark;
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  cursor: default;
+  align-items: center;
+
+  &__name {
+    flex: 1;
+    margin-left: 15px;
+  }
+
+  &__btn-play,
+  &__btn-pause {
+    display: none;
+    color: $color-secondary;
+    font-size: 28px;
+    align-self: start;
+    line-height: 22px;
+    cursor: pointer;
+  }
+
+  &__btn-pause {
+    display: block;
+  }
+
+  &__number-container {
+    width: 30px;
+    text-align: center;
+  }
+
+  &__time {
+    margin-right: 8px;
+  }
+
+}
+
+.track:hover {
+  .track__btn-play {
+    display: block;
+  }
+
+  .track__name,
+  .track__time {
+    color: $color-secondary;
+  }
+
+  .track__number {
+    display: none;
+  }
+}
+
+.current-track {
+  .track__number,
+  .track__name,
+  .track__time {
+    color: $color-secondary;
+  }
+}

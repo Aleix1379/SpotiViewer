@@ -54,3 +54,12 @@ app-profile {
   background-color: $color-primary-dark;
   overflow: hidden !important;
 }
+
+.mat-tab-label {
+  flex: 1;
+  color: $color-text;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background: $color-secondary!important;
+}

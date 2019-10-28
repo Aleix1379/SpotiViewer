@@ -7,8 +7,8 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class ArtistsService {
-  private readonly myArtistsUrl = this.sharedService.getApiUrl('me/following?type=artist');
-  private readonly artistsUrl = this.sharedService.getApiUrl('artists');
+  private readonly myArtistsUrl = this.sharedService.getApiUrl('/me/following?type=artist');
+  private readonly artistsUrl = this.sharedService.getApiUrl('/artists');
 
   constructor(private http: HttpClient,
               private sharedService: SharedService) {

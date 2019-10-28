@@ -25,7 +25,7 @@ export class SharedService {
 
   public getApiUrl(path?: string) {
     if (path) {
-      return `${this.baseApiUrl}/${path}`;
+      return `${this.baseApiUrl}${path}`;
     }
     return this.baseApiUrl;
   }

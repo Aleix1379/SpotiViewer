@@ -1,0 +1,26 @@
+<div class="tab-album-extra-details">
+  <mat-tab-group>
+    <mat-tab label="Tracks">
+      <div>
+        <div *ngFor="let track of tracks" class="track"
+             [ngClass]="{'current-track': track.id == currentTrackId}">
+
+          <div class="track__number-container">
+            <div *ngIf="!(isPlaying && track.id == currentTrackId)" class="track__number">{{track.track_number}}</div>
+
+            <i *ngIf="!(isPlaying && track.id == currentTrackId)" class="track__btn-play fas fa-play-circle"  (click)="play(track)"></i>
+            <i *ngIf="isPlaying && track.id == currentTrackId" class="track__btn-pause fas fa-pause-circle" (click)="pause()"></i>
+
+          </div>
+          <div class="track__name">{{track.name}}</div>
+          <div class="track__time">{{track.duration_ms | msToTime}}</div>
+        </div>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Artists">
+      <pre>{{artists | json}}</pre>
+    </mat-tab>
+  </mat-tab-group>
+
+</div>

@@ -1,4 +1,5 @@
 <div *ngIf="album">
   <app-header [title]="album.name"></app-header>
   <app-page-detail [data]="album"></app-page-detail>
+  <app-tracks *ngIf="tracksResponse" [tracksResponse]="tracksResponse"></app-tracks>
 </div>

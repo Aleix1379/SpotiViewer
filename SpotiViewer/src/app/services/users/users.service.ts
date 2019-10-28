@@ -9,7 +9,7 @@ import {User} from '../../interfaces/user';
 })
 export class UsersService {
 
-  private readonly myUserUrl = this.sharedService.getApiUrl('me');
+  private readonly myUserUrl = this.sharedService.getApiUrl('/me');
 
   constructor(private http: HttpClient,
               private sharedService: SharedService) {

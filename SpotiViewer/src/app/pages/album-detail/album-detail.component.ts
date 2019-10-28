@@ -6,6 +6,7 @@ import {LocalStorageService} from '../../services/localStorage/local-storage.ser
 import {AlbumDetail} from '../../interfaces/album-detail';
 import {MatDialog} from '@angular/material';
 import {LoadingComponent} from '../../components/loading/loading.component';
+import {TracksResponse} from '../../interfaces/TracksResponse';
 
 @Component({
   selector: 'app-album-detail',
@@ -15,6 +16,8 @@ import {LoadingComponent} from '../../components/loading/loading.component';
 export class AlbumDetailComponent implements OnInit {
 
   album: AlbumDetail;
+  tracksResponse: TracksResponse;
+  loadingDialog: any;
 
   constructor(private route: ActivatedRoute,
               private albumsService: AlbumsService,
@@ -26,12 +29,12 @@ export class AlbumDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      const dialog = this.dialog.open(LoadingComponent);
+      this.loadingDialog = this.dialog.open(LoadingComponent);
 
       const albumId = params.get('id');
       this.albumsService.getById(albumId).subscribe(
         data => {
-          dialog.close();
+          this.loadingDialog.close();
           this.album = {
             id: data.id,
             name: data.name,
@@ -42,21 +45,33 @@ export class AlbumDetailComponent implements OnInit {
             genres: data.genres,
           };
         },
-        error => {
-          dialog.close();
-          console.error(`Error donwloading album with id: "${albumId}"`);
-          console.error(error);
-          if (error.status === 401) {
-            console.error('token expired...');
-            this.snackBarService.show('Token expired...');
-            this.localStorageService.removeAccessToken();
-            this.router.navigateByUrl('/').catch(console.error);
-          } else {
-            this.snackBarService.show(`Error donwloading album with id: "${albumId}"`);
-          }
-        }
+        error => this.onError(error, `Error donwloading album with id: "${albumId}"`)
       );
+
+      this.albumsService.getAlbumTracks(albumId).subscribe(
+        data => {
+          console.log('tracks...');
+          console.log(data);
+          this.tracksResponse = data;
+        },
+        error => this.onError(error, `Error donwloading album tracks with id: "${albumId}"`)
+      );
+
     });
+  }
+
+  private onError(error: any, message: string) {
+    this.loadingDialog.close();
+    console.error(message);
+    console.error(error);
+    if (error.status === 401) {
+      console.error('token expired...');
+      this.snackBarService.show('Token expired...');
+      this.localStorageService.removeAccessToken();
+      this.router.navigateByUrl('/').catch(console.error);
+    } else {
+      this.snackBarService.show(message);
+    }
   }
 
 }

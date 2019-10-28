@@ -5,7 +5,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatDialogModule, MatSnackBarModule} from '@angular/material';
+import {MatButtonModule, MatDialogModule, MatSnackBarModule, MatTabsModule} from '@angular/material';
 import {LoginComponent} from './pages/login/login.component';
 import {InterceptorModule} from './interceptor.module';
 import {ArtistsComponent} from './pages/artists/artists.component';
@@ -23,6 +23,8 @@ import { ListHeaderComponent } from './components/list-header/list-header.compon
 import { ArtistDetailComponent } from './pages/artist-detail/artist-detail.component';
 import { PageDetailComponent } from './components/page-detail/page-detail.component';
 import { ButtonComponent } from './components/button/button.component';
+import { TracksComponent } from './components/tracks/tracks.component';
+import { MsToTimePipe } from './pipes/ms-to-time.pipe';
 
 @NgModule({
   entryComponents: [
@@ -46,6 +48,8 @@ import { ButtonComponent } from './components/button/button.component';
     ArtistDetailComponent,
     PageDetailComponent,
     ButtonComponent,
+    TracksComponent,
+    MsToTimePipe,
   ],
   imports: [
     AppRoutingModule,
@@ -57,6 +61,7 @@ import { ButtonComponent } from './components/button/button.component';
     MatDialogModule,
     MatSnackBarModule,
     PipesModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
