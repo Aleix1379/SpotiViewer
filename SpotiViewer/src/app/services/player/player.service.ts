@@ -19,6 +19,7 @@ declare global {
 export class PlayerService {
 
   private player: SpotifyPlayer;
+  private deviceID: number;
 
   constructor(private http: HttpClient,
               private sharedService: SharedService,
@@ -70,6 +71,7 @@ export class PlayerService {
       // Ready
       this.player.addListener('ready', ({device_id}) => {
         console.log('Ready with Device ID', device_id);
+        this.deviceID = device_id;
       });
 
       // Not Ready
@@ -89,13 +91,12 @@ export class PlayerService {
                     spotify_uri,
                     playerInstance: {
                       _options: {
-                        getOAuthToken,
-                        id
+                        getOAuthToken
                       }
                     }
                   }) => {
       getOAuthToken(accessToken => {
-        fetch(`https://api.spotify.com/v1/me/player/play?device_id=${id}`, {
+        fetch(`https://api.spotify.com/v1/me/player/play?device_id=${this.deviceID}`, {
           method: 'PUT',
           body: JSON.stringify({uris: [spotify_uri]}),
           headers: {
