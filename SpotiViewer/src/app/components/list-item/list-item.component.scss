@@ -31,10 +31,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow-x: scroll;
+    //overflow-x: scroll;
 
     &__title {
-      overflow-x: scroll;
+    //  overflow-x: scroll;
 
       > div {
         white-space: nowrap;
@@ -49,7 +49,7 @@
       }
 
       &__value {
-        overflow-x: scroll;
+       // overflow-x: scroll;
 
         > div {
           white-space: nowrap;

@@ -11,7 +11,7 @@
   margin: 4px 4px 15px;
 
   &__title {
-    overflow-x: scroll;
+    //overflow-x: scroll;
 
     > div {
       color: $color-text;
@@ -43,7 +43,7 @@
     }
 
     &__value {
-      overflow-x: scroll;
+      //overflow-x: scroll;
 
       > div {
         white-space: nowrap;

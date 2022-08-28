@@ -26,14 +26,14 @@ body {
 app-root {
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
+ //overflow-y: scroll;
   height: 100vh;
 }
 
 app-albums,
 app-artists {
   max-height: calc(100vh - 60px);
-  overflow-y: scroll;
+ // overflow-y: scroll;
 
   @include respond(desktop) {
     position: relative;
