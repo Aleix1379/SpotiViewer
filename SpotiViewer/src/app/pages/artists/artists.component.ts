@@ -37,7 +37,7 @@ export class ArtistsComponent implements OnInit {
           return {
             id: item.id,
             name: item.name,
-            image: item.images[0].url,
+            image: item.images.length > 0 && item.images[0].url,
             popularity: item.popularity,
             details: item.genres.length === 0 ? 'There is no genres' : item.genres.join(', ')
           };
